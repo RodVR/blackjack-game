@@ -34,3 +34,8 @@ button{
     flex-direction: column;
 }
 
+button:hover {
+    background: rgb(208, 50, 50);
+    color: goldenrod;
+}
+
