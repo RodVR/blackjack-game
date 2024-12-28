@@ -1,3 +1,5 @@
+I'll come back to this game, I'm going to add a deck of cards API so I can show the cards instead of just having numbers being shown.
+
 ![image](https://github.com/user-attachments/assets/61960021-0bcf-4f6e-b369-44249713d1f4)
 ![image](https://github.com/user-attachments/assets/393ca783-c76d-4458-b59c-c32c8857a0f7)
 ![image](https://github.com/user-attachments/assets/10e0564b-8fc2-42a6-9f25-8afe92dc1c9a)
