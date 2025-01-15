@@ -1,6 +1,6 @@
-I'll come back to this game, I'm going to add a deck of cards API so I can show the cards instead of just having numbers being shown.
+Fairly happy with the result, was able to use an API to show the cards instead of having just numbers showing up. It's a little laggy but I guess it adds to the charm, it's as if the dealer is actually fetching the cards instead of you getting them instantaneously.
 
-![image](https://github.com/user-attachments/assets/61960021-0bcf-4f6e-b369-44249713d1f4)
-![image](https://github.com/user-attachments/assets/393ca783-c76d-4458-b59c-c32c8857a0f7)
-![image](https://github.com/user-attachments/assets/10e0564b-8fc2-42a6-9f25-8afe92dc1c9a)
-![image](https://github.com/user-attachments/assets/1c20ea3b-dd02-4efa-8884-4ec9c70341bf)
+
+![image](https://github.com/user-attachments/assets/38a022db-4b73-468f-8460-e0f482bf42f6)
+![image](https://github.com/user-attachments/assets/77bbaf7b-c9f5-4b4b-bc22-90ab1d40042f)
+![image](https://github.com/user-attachments/assets/a2a1c03b-da2d-4a08-9f65-12eb0d20141f)
