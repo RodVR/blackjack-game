@@ -143,8 +143,6 @@ newCardBtn.onclick = async function () {
         }
     }
 
-    playerEl.textContent = player.name + ": $" + player.chips;
-
     messageEl.textContent = message
 
 }
