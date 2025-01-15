@@ -20,10 +20,8 @@ const dealerCards = document.querySelector("#dealer-cards-container")
 playerEl.textContent = player.name + ": $" + player.chips 
 dealerEl.textContent = "Dealer Cards: " 
 
-// URL to fetch a new deck of cards
 const deckUrl = "https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6"
 
-// Buttons for game actions
 const newCardBtn = document.querySelector("#newcard-btn") 
 const startBtn = document.querySelector("#start-btn") 
 const standBtn = document.querySelector("#stand-btn") 
@@ -32,34 +30,29 @@ let cardsContainer = document.querySelector("#cards-container")
 
 let deckId = ""
 
-// Function to fetch and initialize a new deck of cards
 async function getDeck() {
-    const response = await fetch(deckUrl) // Fetch deck details from API
-    const deckDetails = await response.json() // Parse response as JSON
-    deckId = deckDetails.deck_id // Store the deck ID for future requests
+    const response = await fetch(deckUrl) 
+    const deckDetails = await response.json() 
+    deckId = deckDetails.deck_id
 }
 
-// Call the function to initialize the deck
 getDeck()
 
-// Event listener for the start button
 startBtn.onclick = async function () {
 
-    newCardBtn.disabled = false // Enable the new card button
-    standBtn.disabled = false // Enable the stand button
+    newCardBtn.disabled = false 
+    standBtn.disabled = false 
 
     isAlive = true 
     hasBlackJack = false 
     sum = 0 
     dealerSum = 0 
 
-    // Fetch two cards for the player
     const cardUrl = `https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`
-    const response = await fetch(cardUrl) // Fetch cards from API
-    const cards = await response.json() // Parse response as JSON
-    const startingCards = cards.cards // Extract card details
+    const response = await fetch(cardUrl) 
+    const cards = await response.json() 
+    const startingCards = cards.cards 
 
-    // Display the player's cards
     cardsContainer.innerHTML = `<img src="${startingCards[0].image}" alt="${startingCards[0].value} of ${startingCards[0].suit}"/>`
     cardsContainer.innerHTML += `<img src="${startingCards[1].image}" alt="${startingCards[1].value} of ${startingCards[1].suit}"/>`
 
@@ -72,7 +65,7 @@ startBtn.onclick = async function () {
         } else if (card.value === "ACE" && (sum + 11) > 21) {
             sum += 1 
         } else {
-            // Convert string into int and add the numeric value of other cards
+            // Convert string into int and add the value of other cards
             sum += parseInt(card.value) 
         }
     })
@@ -80,9 +73,9 @@ startBtn.onclick = async function () {
     sumEl.textContent = `Player Sum: ${sum}` 
 
     const dealerCardUrl = `https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`
-    const dealerResponse = await fetch(dealerCardUrl) // Fetch dealer's card from API
-    const dealerCard = await dealerResponse.json() // Parse response as JSON
-    const dealerCardDetails = dealerCard.cards[0] // Extract card details
+    const dealerResponse = await fetch(dealerCardUrl) 
+    const dealerCard = await dealerResponse.json() 
+    const dealerCardDetails = dealerCard.cards[0] 
 
     dealerCards.innerHTML = `<img src="${dealerCardDetails.image}" alt="${dealerCardDetails.value} of ${dealerCardDetails.suit}"/>`
 
@@ -115,9 +108,9 @@ startBtn.onclick = async function () {
 
 newCardBtn.onclick = async function () {
     const cardUrl = `https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`
-    const response = await fetch(cardUrl) // Fetch a new card for the player
-    const card = await response.json() // Parse response as JSON
-    const cardDetails = card.cards[0] // Extract card details
+    const response = await fetch(cardUrl)
+    const card = await response.json()
+    const cardDetails = card.cards[0] 
 
     cardsContainer.innerHTML += `<img src="${cardDetails.image}" alt="${cardDetails.value} of ${cardDetails.suit}"/>`
 
